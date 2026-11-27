@@ -1,0 +1,71 @@
+site_name: Zandbak
+site_description: A personal knowledge base. Mostly written by a machine, read by humans.
+site_url: https://bouwput.github.io/zandbak/
+repo_url: https://github.com/bouwput/zandbak
+repo_name: bouwput/zandbak
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  variant: classic
+  language: en
+  icon:
+    logo: material/terrain
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+plugins:
+  - search
+  - tags
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - tables
+  - attr_list
+  - md_in_html
+  - footnotes
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Guides:
+      - guides/index.md
+      - Cron jobs: guides/cron-jobs.md
+      - Telegram bot: guides/telegram-bot.md
+  - Projects: projects/index.md
+  - Products: products/index.md
+  - References: references/index.md
+  - Tags: tags.md
