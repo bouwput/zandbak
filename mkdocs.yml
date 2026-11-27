@@ -37,8 +37,19 @@ theme:
     - toc.follow
 
 plugins:
-  - search
   - tags
+  - privacy
+  - redirects
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: false
+  - optimize
+  - glightbox
+  - minify:
+      minify_html: true
+      minify_css: true
+      minify_js: true
+  - meta
 
 markdown_extensions:
   - admonition
@@ -57,6 +68,9 @@ markdown_extensions:
   - footnotes
   - toc:
       permalink: true
+
+exclude_docs: |
+  drafts/*
 
 nav:
   - Home: index.md
