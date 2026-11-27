@@ -1,8 +1,6 @@
 site_name: Zandbak
 site_description: A personal knowledge base. Mostly written by a machine, read by humans.
 site_url: https://bouwput.github.io/zandbak/
-repo_url: https://github.com/bouwput/zandbak
-repo_name: bouwput/zandbak
 edit_uri: edit/main/docs/
 
 theme:
