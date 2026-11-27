@@ -1,0 +1,26 @@
+name: Migration build check
+
+# Builds every commit on the migration branch. Removed once migration lands.
+on:
+  push:
+    branches: [zensical-migration]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Install image optimizers
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends pngquant
+
+      - name: Build site
+        run: zensical build
